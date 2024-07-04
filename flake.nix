@@ -3,14 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
   let
     user = "nguyen";
     system = "x86_64-linux";
@@ -28,6 +28,7 @@
 
         modules = [
 	  ./hosts/thinkpad-nixos
+	  catppuccin.nixosModules.catppuccin
 	  {
 	    environment.systemPackages = with pkgs; [
 	      vim
@@ -42,7 +43,10 @@
     homeConfigurations = {
       nguyen = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	modules = [./home-manager/home.nix];
+	modules = [
+	  ./home-manager/home.nix
+	  catppuccin.homeManagerModules.catppuccin
+	];
       };
     };
   };

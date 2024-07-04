@@ -7,9 +7,10 @@
       xdg-desktop-portal-wlr
       xdg-desktop-portal-gtk
       xdg-utils
+      libnotify
       glib
+
       fontconfig
-      catppuccin-gtk
       kanshi
 
       swaylock
@@ -25,8 +26,6 @@
       grim
       slurp
       sway-contrib.grimshot
-      libnotify
-      glib
       pavucontrol
 
       xfce.thunar
@@ -64,5 +63,11 @@
       Type = "simple";
       ExecStart = ''${pkgs.kanshi}/bin/kanshi -c kanshi_config_file'';
     };
+  };
+
+  catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+    accent = "flamingo";
   };
 }

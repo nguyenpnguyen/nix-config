@@ -81,10 +81,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-    sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-    };
   };
 
   users.users.nguyen = {

@@ -13,6 +13,7 @@
     ./swaylock/swaylock.nix
     ./rofi/rofi.nix
     ./dev/dev.nix
+    ./theme.nix
     ./misc.nix
   ];
   home = {
@@ -38,11 +39,16 @@
   };
   
 
-  xdg.mimeApps.defaultApplications = {
-    "text/plain" = [ "neovide.desktop" ];
-    "application/pdf" = [ "zathura.desktop" ];
-    "image/*" = [ "imv.desktop" ];
-    "video/*" = [ "vlc.desktop" ];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/plain" = [ "neovide.desktop" ];
+      "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
+      "image/gif" = [ "imv.desktop" ];
+      "image/jpeg" = [ "imv.desktop" ];
+      "image/png" = [ "imv.desktop" ];
+      "video/*" = [ "vlc.desktop" ];
+    };
   };
 
   # Programs
@@ -51,6 +57,7 @@
   };
 
   fonts.fontconfig.enable = true;
+
   systemd.user.targets.tray = {
       Unit = {
           Description = "Home Manager System Tray";

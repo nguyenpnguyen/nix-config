@@ -20,7 +20,12 @@
       pnpm
       bun
       jdk
-      python3
+      (python3.withPackages (subpkgs: with subpkgs; [
+        pip
+        pygobject3
+      ]))
+
+      gobject-introspection
     ];
     sessionVariables = {
       EDITOR = "nvim";
