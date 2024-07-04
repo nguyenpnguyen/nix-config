@@ -44,9 +44,9 @@
     defaultApplications = {
       "text/plain" = [ "neovide.desktop" ];
       "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
-      "image/gif" = [ "imv.desktop" ];
-      "image/jpeg" = [ "imv.desktop" ];
-      "image/png" = [ "imv.desktop" ];
+      "image/gif" = [ "imv-dir.desktop" ];
+      "image/jpeg" = [ "imv-dir.desktop" ];
+      "image/png" = [ "imv-dir.desktop" ];
       "video/*" = [ "vlc.desktop" ];
     };
   };
