@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       jetbrains.idea-community
@@ -37,6 +33,8 @@
       gobject-introspection
       # Exercism
       exercism
+      # Misc tools
+      jq
     ];
     sessionVariables = {
       EDITOR = "nvim";
