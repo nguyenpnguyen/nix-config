@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{...}: {
   imports = [
     ./sh.nix
     ./git.nix
@@ -21,33 +19,17 @@
     homeDirectory = "/home/nguyen";
 
     stateVersion = "24.05";
-
-    packages = with pkgs; [
-      zathura
-      imv
-      vlc
-      spotify
-      spotify-tray
-      nerdfonts
-
-      brave
-      btop
-      tree
-      wireshark
-      fzf
-    ];
   };
-  
 
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/plain" = [ "neovide.desktop" ];
-      "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
-      "image/gif" = [ "imv-dir.desktop" ];
-      "image/jpeg" = [ "imv-dir.desktop" ];
-      "image/png" = [ "imv-dir.desktop" ];
-      "video/*" = [ "vlc.desktop" ];
+      "text/plain" = ["neovide.desktop"];
+      "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
+      "image/gif" = ["imv-dir.desktop"];
+      "image/jpeg" = ["imv-dir.desktop"];
+      "image/png" = ["imv-dir.desktop"];
+      "video/*" = ["vlc.desktop"];
     };
   };
 
@@ -59,9 +41,9 @@
   fonts.fontconfig.enable = true;
 
   systemd.user.targets.tray = {
-      Unit = {
-          Description = "Home Manager System Tray";
-          Requires = [ "graphical-session-pre.target" ];
-      };
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = ["graphical-session-pre.target"];
+    };
   };
 }

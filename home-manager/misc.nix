@@ -6,6 +6,19 @@
   home.packages = with pkgs; [
     bluetuith
     gtk3
+    libreoffice-fresh
+    floorp
+    brave
+    zathura
+    imv
+    vlc
+    spotify
+    spotify-tray
+    nerdfonts
+    btop
+    tree
+    wireshark
+    fzf
   ];
 
   programs = {
