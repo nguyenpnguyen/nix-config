@@ -9,6 +9,7 @@
       # System packages
       ../../system-modules/keyd/keyd.nix
       ../../system-modules/sway/sway.nix
+      ../../system-modules/sddm/sddm.nix
     ];
 
   # Bootloader.
@@ -28,8 +29,6 @@
   services = {
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
       xkb = {
 	layout = "us";
 	variant = "";
