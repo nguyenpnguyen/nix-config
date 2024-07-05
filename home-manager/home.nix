@@ -11,6 +11,8 @@
     ./swaylock/swaylock.nix
     ./rofi/rofi.nix
     ./dev/dev.nix
+    ./desktop/desktop.nix
+    ./lf/lf.nix
     ./theme.nix
     ./misc.nix
   ];
