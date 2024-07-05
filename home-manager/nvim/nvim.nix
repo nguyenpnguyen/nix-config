@@ -19,6 +19,8 @@
       cmp-nvim-lsp
       luasnip
       friendly-snippets
+      copilot-lua
+      copilot-cmp
       # UI
       neodev-nvim
       nvim-web-devicons
@@ -54,6 +56,7 @@
       ${builtins.readFile ./plugins/which-key.lua}
       ${builtins.readFile ./plugins/lsp.lua}
       ${builtins.readFile ./plugins/oil.lua}
+      ${builtins.readFile ./plugins/copilot.lua}
     '';
 
     extraPackages = with pkgs; [

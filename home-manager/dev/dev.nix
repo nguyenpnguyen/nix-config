@@ -35,6 +35,8 @@
           pygobject3
         ]))
       gobject-introspection
+      # Exercism
+      exercism
     ];
     sessionVariables = {
       EDITOR = "nvim";
