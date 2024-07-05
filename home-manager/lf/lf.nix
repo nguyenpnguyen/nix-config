@@ -4,6 +4,7 @@
       pistol
       kitty
       ffmpegthumbnailer
+      file
     ];
     file = {
       "bin/vidthumb" = {
@@ -13,21 +14,23 @@
     };
   };
 
+  xdg.configFile = {
+    "lf/lf-kitty-preview" = {
+      source = ./lf-kitty-preview;
+      executable = true;
+    };
+    "lf/lf-kitty-clean" = {
+      source = ./lf-kitty-clean;
+      executable = true;
+    };
+  };
+
   programs = {
     lf = {
       enable = true;
-      previewer.source = "~/.config/lf/lf-kitty-preview";
-      settings.cleaner = "~/.config/lf/lf-kitty-clean";
-    };
-
-    xdg.configFile = {
-      "lf/lf-kitty-preview" = {
-        source = ./lf-kitty-preview;
-        executable = true;
-      };
-      "lf/lf-kitty-clean" = {
-        source = ./lf-kitty-clean;
-        executable = true;
+      settings = {
+        cleaner = "~/.config/lf/lf-kitty-clean";
+        previewer = "~/.config/lf/lf-kitty-preview";
       };
     };
   };
