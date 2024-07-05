@@ -1,31 +1,29 @@
-{ config, pkgs, ... }:
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    neovide
+  ];
 
-{
-  home.packages = with pkgs; [ neovide ];
-
-  programs.neovim =
-  let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  in {
+  programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
+      # Telescope
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
-
+      telescope-nvim
+      # Completion and snippets
       cmp_luasnip
       cmp-nvim-lsp
       luasnip
       friendly-snippets
-
+      # UI
       neodev-nvim
       nvim-web-devicons
       fidget-nvim
-
+      #Misc
       vim-nix
       vim-sleuth
       comment-nvim
@@ -34,18 +32,14 @@
       plenary-nvim
       popup-nvim
       nvim-autopairs
-
       mini-nvim
       nvim-cmp
-      telescope-nvim
       nvim-treesitter
       conform-nvim
       gitsigns-nvim
       which-key-nvim
       nvim-lspconfig
       oil-nvim
-
-      vim-clang-format
     ];
 
     extraLuaConfig = ''
@@ -66,23 +60,35 @@
       xclip
       wl-clipboard
       ripgrep
-
-      luajitPackages.lua-lsp
+      fd
+      lua52Packages.jsregexp
+      # Nix
+      nixd
+      alejandra
+      # Lua
       lua-language-server
       stylua
-
+      # Python
       pyright
       black
       isort
-
-      gofumpt
+      # Java
+      google-java-format
+      # Go
       gotools
       gopls
-
-      ccls
-
+      golangci-lint
+      golangci-lint-langserver
+      # Web
+      vscode-langservers-extracted
       typescript
       prettierd
+      htmx-lsp
+      rubyPackages.htmlbeautifier
+      rustywind
+      stylelint
+      # Misc
+      marksman
     ];
   };
 }

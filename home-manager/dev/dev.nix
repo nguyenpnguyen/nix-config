@@ -1,30 +1,39 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     packages = with pkgs; [
       jetbrains.idea-community
       jetbrains.idea-ultimate
-      vscodium
+      vscode
       zed-editor
-
+      # C
       gcc
       libgcc
       cmake
       llvmPackages_18.clang-tools
       llvm
+      # Lua
       lua
+      # Go
       go
+      # Rust
       rustup
+      # JS
       nodejs
       pnpm
       bun
+      # Java
       jdk
-      (python3.withPackages (subpkgs: with subpkgs; [
-        pip
-        pygobject3
-      ]))
-
+      jdt-language-server
+      # Python
+      (python3.withPackages (subpkgs:
+        with subpkgs; [
+          pip
+          pygobject3
+        ]))
       gobject-introspection
     ];
     sessionVariables = {
@@ -35,8 +44,8 @@
     };
   };
   xdg.configFile = {
-    "VSCodium" = {
-      source = ./vscodiumconf;
+    "Code" = {
+      source = ./vscode;
       recursive = true;
     };
   };

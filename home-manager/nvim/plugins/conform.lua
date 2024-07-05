@@ -9,20 +9,20 @@ conform.setup({
 		cpp = { "clang-format" },
 		lua = { "stylua" },
 		python = { "isort", "black" },
-		javascript = { "prettierd", "prettier" },
-		typescript = { "prettierd", "prettier" },
-		go = { "gofumpt", "goimports" },
+		java = { "google-java-format" },
+		javascript = { { "prettierd", "prettier" } },
+		typescript = { { "prettierd", "prettier" } },
+		jsx = { { "prettierd", "prettier" } },
+		tsx = { { "prettierd", "prettier" } },
+		go = { "gofmt", "goimports" },
+		nix = { "alejandra" },
+		html = { "htmlbeautifier", "rustywind" },
+		css = { "stylelint" },
 	},
-	format_on_save = function(bufnr)
-		-- Disable "format_on_save lsp_fallback" for languages that don't
-		-- have a well standardized coding style. You can add additional
-		-- languages here or re-enable it for the disabled ones.
-		local disable_filetypes = { c = true, cpp = true }
-		return {
-			timeout_ms = 500,
-			lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-		}
-	end,
+	format_on_save = {
+		timeout_ms = 500,
+		lsp_format = "fallback",
+	},
 })
 
 -- Define key mappings for autoformatting

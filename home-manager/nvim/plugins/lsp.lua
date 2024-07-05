@@ -1,15 +1,24 @@
--- Define vim as a global variable to avoid LSP warnings
-_G.vim = vim
-
 -- Load required dependencies
 local lspconfig = require("lspconfig")
 
+-- Enable snippets
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- Setup LSP servers
 local servers = {
+	-- Nix
+	nixd = {},
+	-- C and C++
 	clangd = {},
+	-- Go
 	gopls = {},
+	golangci_lint_ls = {},
+	-- Java
+	jdtls = {},
+	-- Python
 	pyright = {},
-	tsserver = {},
+	-- Lua
 	lua_ls = {
 		settings = {
 			Lua = {
@@ -20,6 +29,21 @@ local servers = {
 			},
 		},
 	},
+	-- Web
+	tsserver = {},
+	eslint = {
+		on_attach = function(client, bufnr)
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				command = "EslintFixAll",
+			})
+		end,
+	},
+	cssls = { capabilities = capabilities },
+	html = { capabilities = capabilities },
+	htmx = {},
+	-- Misc
+	marksman = {},
 }
 
 -- Setup LSP configurations using lspconfig
