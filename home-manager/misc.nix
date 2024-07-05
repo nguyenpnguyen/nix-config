@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services = {
     swayosd.enable = true;
   };
@@ -17,7 +15,7 @@
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
-        fcitx5-unikey
+      fcitx5-unikey
     ];
   };
 }

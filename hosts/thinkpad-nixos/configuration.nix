@@ -1,17 +1,4 @@
-{ inputs, config, pkgs, ... }:
-
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./audio.nix
-
-      # System packages
-      ../../system-modules/keyd/keyd.nix
-      ../../system-modules/sway/sway.nix
-      ../../system-modules/sddm/sddm.nix
-    ];
-
+{pkgs, ...}: {
   # Bootloader.
   boot.loader = {
     systemd-boot.enable = true;
@@ -22,7 +9,7 @@
   networking = {
     hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   };
 
   # Services
@@ -30,8 +17,8 @@
     xserver = {
       enable = true;
       xkb = {
-	layout = "us";
-	variant = "";
+        layout = "us";
+        variant = "";
       };
     };
     gnome.gnome-keyring.enable = true;
@@ -39,15 +26,20 @@
     libinput.enable = true;
     openssh.enable = true;
   };
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   security = {
     polkit.enable = true;
     pam = {
       services.swaylock = {};
       loginLimits = [
-	{ domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+        {
+          domain = "@users";
+          item = "rtprio";
+          type = "-";
+          value = 1;
+        }
       ];
     };
     rtkit.enable = true;
@@ -84,7 +76,7 @@
 
   users.users.nguyen = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "keyd" "video" ];
+    extraGroups = ["networkmanager" "wheel" "keyd" "video"];
     shell = pkgs.zsh;
   };
 

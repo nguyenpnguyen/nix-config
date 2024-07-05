@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   catppuccin = {
     enable = true;
     flavor = "macchiato";
@@ -12,24 +10,24 @@
     };
   };
 
- gtk = {
+  gtk = {
     enable = true;
     font.name = "DejaVuSansM Nerd Font Regular 11";
 
     theme = {
-        name = "Catppuccin-Macchiato-Standard-Flamingo-Dark";
-        package = pkgs.catppuccin-gtk;
-      };
+      name = "Catppuccin-Macchiato-Standard-Flamingo-Dark";
+      package = pkgs.catppuccin-gtk;
+    };
 
     iconTheme = {
-        name = "cat-macchiato-blue";
-        package = pkgs.catppuccin-papirus-folders;
+      name = "cat-macchiato-blue";
+      package = pkgs.catppuccin-papirus-folders;
     };
 
     cursorTheme = {
-        name = "mochaMauve";
-        size = 24;
-        package = pkgs.catppuccin-cursors;
+      name = "mochaMauve";
+      size = 24;
+      package = pkgs.catppuccin-cursors;
     };
 
     gtk3.extraConfig = {
