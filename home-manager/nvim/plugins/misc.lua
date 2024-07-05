@@ -5,6 +5,9 @@ vim.cmd("colorscheme catppuccin-macchiato")
 require("Comment").setup()
 
 -- Highlight TODOs
-require('todo-comments').setup({
-    signs = false
+require("todo-comments").setup({
+	signs = false,
 })
+
+-- Autopairs
+require("nvim-autopairs").setup({})

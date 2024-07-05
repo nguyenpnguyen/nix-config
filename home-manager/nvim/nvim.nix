@@ -15,16 +15,20 @@
       telescope-ui-select-nvim
       telescope-nvim
       # Completion and snippets
+      nvim-cmp
       cmp_luasnip
       cmp-nvim-lsp
       luasnip
       friendly-snippets
       copilot-lua
       copilot-cmp
+      lspkind-nvim
       # UI
       neodev-nvim
       nvim-web-devicons
       fidget-nvim
+      #Git
+      vim-fugitive
       #Misc
       vim-nix
       vim-sleuth
@@ -35,7 +39,6 @@
       popup-nvim
       nvim-autopairs
       mini-nvim
-      nvim-cmp
       nvim-treesitter
       conform-nvim
       gitsigns-nvim

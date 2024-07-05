@@ -27,8 +27,8 @@ vim.opt.breakindent = true
 -- Indentation
 vim.o.expandtab = true
 vim.o.smartindent = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 
 -- Save undo history
 vim.opt.undofile = true
@@ -107,6 +107,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		vim.bo.expandtab = true
+		vim.bo.smartindent = true
+		vim.bo.tabstop = 4
+		vim.bo.shiftwidth = 4
+	end,
+})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
