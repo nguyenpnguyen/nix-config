@@ -11,13 +11,11 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
     catppuccin,
     ...
   } @ inputs: let
-    user = "nguyen";
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
