@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{...}: let
   aliases = {
     ll = "ls -l";
     ".." = "cd ..";
@@ -27,7 +23,6 @@ in {
         bindkey -s ^F "tmux-sessionizer\n"
 
         export PATH
-        export MOZ_ENABLE_WAYLAND=1
       '';
       initExtra = ''
         source $HOME/.zprofile

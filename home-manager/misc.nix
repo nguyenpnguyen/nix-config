@@ -1,10 +1,12 @@
 {pkgs, ...}: {
   services = {
     swayosd.enable = true;
+    network-manager-applet.enable = true;
   };
 
   home.packages = with pkgs; [
     bluetuith
+    networkmanagerapplet
     gtk3
     libreoffice-fresh
     floorp

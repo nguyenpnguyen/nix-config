@@ -3,7 +3,6 @@
     kanshi
     swaylock
     swayidle
-    sway-audio-idle-inhibit
     swaybg
     swayosd
     wl-clipboard

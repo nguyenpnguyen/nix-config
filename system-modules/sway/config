@@ -1,5 +1,5 @@
 # Exec on startup
-exec fcitx5 & wl-paste --watch cliphist store & swayosd-server & sway-audio-idle-inhibit
+exec fcitx5 & wl-paste --watch cliphist store & swayosd-server
 
 # exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 ### Variables
@@ -326,8 +326,8 @@ for_window [app_id="pavucontrol-qt"] {
 }
 
 # Lock screen after closing lid
-set $lidclose 'swaylock && systemctl suspend'
-bindswitch --reload --locked lid:on exec $lidclose
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
 
 bindsym {
     # Capture the currently active output

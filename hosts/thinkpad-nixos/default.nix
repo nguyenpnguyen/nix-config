@@ -7,6 +7,6 @@
     # System packages
     ../../system-modules/keyd/keyd.nix
     ../../system-modules/sway/sway.nix
-    ../../system-modules/sddm/sddm.nix
+    ../../system-modules/greeter/greeter.nix
   ];
 }
