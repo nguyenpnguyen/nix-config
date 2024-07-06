@@ -69,7 +69,7 @@ exec swayidle -w \
         timeout 270 'swaylock -f' \
         timeout 300 'swaymsg "output * power off"' \
             resume 'swaymsg "output * power on"'  \
-        timeout 600 'systemctl suspend' \
+        timeout 360 'systemctl suspend' \
         before-sleep 'swaylock -f' \
 
 # Disable displays on idle
@@ -326,8 +326,8 @@ for_window [app_id="pavucontrol-qt"] {
 }
 
 # Lock screen after closing lid
-bindswitch --reload --locked lid:on output eDP-1 disable
-bindswitch --reload --locked lid:off output eDP-1 enable
+# bindswitch --reload --locked lid:on output eDP-1 disable
+# bindswitch --reload --locked lid:off output eDP-1 enable
 
 bindsym {
     # Capture the currently active output
