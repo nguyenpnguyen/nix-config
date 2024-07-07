@@ -5,9 +5,10 @@
     ./nvim/nvim.nix
     ./waybar/waybar.nix
     ./wezterm/wezterm.nix
-    ./foot/foot.nix
+    # ./foot/foot.nix
     ./tmux/tmux.nix
-    ./dunst/dunst.nix
+    # ./dunst/dunst.nix
+    ./swaync/swaync.nix
     ./swaylock/swaylock.nix
     ./rofi/rofi.nix
     ./dev/dev.nix

@@ -30,7 +30,7 @@
 @define-color rosewater #f5e0dc;
 
 * {
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "NotoSansMono Nerd Font";
   font-size: 1.2rem;
   border-radius: 0.2rem;
   transition-property: background-color;

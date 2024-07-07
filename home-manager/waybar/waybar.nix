@@ -1,6 +1,4 @@
-{ config, pkgs, lib, ... }:
-
-{
+{lib, ...}: {
   programs.waybar.enable = true;
 
   xdg.configFile = {

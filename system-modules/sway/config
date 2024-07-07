@@ -1,5 +1,5 @@
 # Exec on startup
-exec fcitx5 & wl-paste --watch cliphist store & swayosd-server
+exec fcitx5 & wl-paste --watch cliphist store & swayosd-server & swaync
 
 # exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 ### Variables
@@ -92,6 +92,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+t exec $file-manager
+    # Toggle control center
+    bindsym $mod+Shift+n exec swaync-client -t -sw
 
     # Kill focused window
     bindsym $mod+q kill
