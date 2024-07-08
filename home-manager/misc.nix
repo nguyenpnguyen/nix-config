@@ -21,6 +21,8 @@
     tree
     wireshark
     fzf
+    thunderbird
+    teams-for-linux
   ];
 
   i18n.inputMethod = {

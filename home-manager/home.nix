@@ -38,6 +38,8 @@
       "x-scheme-handler/https" = "floorp.desktop";
       "x-scheme-handler/about" = "floorp.desktop";
       "x-scheme-handler/unknown" = "floorp.desktop";
+      "text/calendar" = "thunderbird.desktop";
+      "text/vcalendar" = "thunderbird.desktop";
     };
   };
 

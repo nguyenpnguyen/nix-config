@@ -23,6 +23,8 @@
       copilot-lua
       copilot-cmp
       lspkind-nvim
+      cmp-path
+      cmp-rg
       # UI
       neodev-nvim
       nvim-web-devicons

@@ -229,3 +229,8 @@ tooltip label {
 #custom-pomo.finished {
   color: @red;
 }
+
+#custom-notification {
+  color: @rosewater;
+  padding-right: 0.1rem;
+}
