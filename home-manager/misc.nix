@@ -23,9 +23,8 @@
     thunderbird
     teams-for-linux
     obsidian
-    steam
     telegram-desktop
-    protonvpn-gui
+    protonvpn-cli_2
   ];
 
   i18n.inputMethod = {

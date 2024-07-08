@@ -25,6 +25,7 @@
     printing.enable = true;
     libinput.enable = true;
     openssh.enable = true;
+    flatpak.enable = true;
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
