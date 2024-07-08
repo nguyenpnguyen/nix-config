@@ -11,6 +11,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
     catppuccin,

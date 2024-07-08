@@ -16,6 +16,7 @@
     ./lf/lf.nix
     ./theme.nix
     ./misc.nix
+    ./nur.nix
   ];
   home = {
     username = "nguyen";
@@ -28,6 +29,7 @@
     enable = true;
     defaultApplications = {
       "text/plain" = ["neovide.desktop"];
+      "text/x-asm" = ["neovide.desktop"];
       "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
       "image/gif" = ["imv-dir.desktop"];
       "image/jpeg" = ["imv-dir.desktop"];

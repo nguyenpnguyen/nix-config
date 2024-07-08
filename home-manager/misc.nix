@@ -23,6 +23,9 @@
     fzf
     thunderbird
     teams-for-linux
+    obsidian
+    steam
+    telegram-desktop
   ];
 
   i18n.inputMethod = {

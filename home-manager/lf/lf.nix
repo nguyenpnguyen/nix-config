@@ -23,6 +23,10 @@
       source = ./lf-kitty-clean;
       executable = true;
     };
+    "lf/lfcd.sh" = {
+      source = ./lfcd.sh;
+      executable = true;
+    };
   };
 
   programs = {
@@ -31,6 +35,13 @@
       settings = {
         cleaner = "~/.config/lf/lf-kitty-clean";
         previewer = "~/.config/lf/lf-kitty-preview";
+      };
+      keybindings = {
+        D = "trash";
+        U = "!du -sh";
+        gg = null;
+        gh = "cd ~";
+        i = "$less $f";
       };
     };
   };

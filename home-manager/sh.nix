@@ -20,6 +20,13 @@ in {
           PATH="$HOME/.local/bin:$PATH"
         fi
 
+        LFCD="/path/to/lfcd.sh"
+        if [ -f "$LFCD" ]; then
+            source "$LFCD"
+        fi
+
+        # Keybindings
+        bindkey -s '^o' 'lfcd\n'
         bindkey -s ^F "tmux-sessionizer\n"
 
         export PATH

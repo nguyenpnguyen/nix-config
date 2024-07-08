@@ -5,8 +5,8 @@
     ./audio.nix
 
     # System packages
-    ../../system-modules/keyd/keyd.nix
-    ../../system-modules/sway/sway.nix
-    ../../system-modules/greeter/greeter.nix
+    ./keyd/keyd.nix
+    ./sway/sway.nix
+    ./greeter/greeter.nix
   ];
 }
