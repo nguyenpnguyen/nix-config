@@ -17,7 +17,6 @@
     spotify
     spotify-tray
     nerdfonts
-    btop
     tree
     wireshark
     fzf
@@ -26,6 +25,7 @@
     obsidian
     steam
     telegram-desktop
+    protonvpn-gui
   ];
 
   i18n.inputMethod = {

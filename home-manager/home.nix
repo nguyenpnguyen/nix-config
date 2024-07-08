@@ -16,6 +16,7 @@
     ./lf/lf.nix
     ./theme.nix
     ./misc.nix
+    ./btop/btop.nix
   ];
   home = {
     username = "nguyen";
