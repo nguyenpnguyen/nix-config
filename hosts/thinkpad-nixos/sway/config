@@ -41,7 +41,7 @@ gaps inner 4
 
 ### Output configuration
 
- output * bg $HOME/.nixconf/system-modules/sway/wallpaper/catppuccin-coffee.png fill
+ output * bg $HOME/.nixconf/hosts/thinkpad-nixos/sway/wallpaper/catppuccin-coffee.png fill
 #
 # Example configuration:
 #
