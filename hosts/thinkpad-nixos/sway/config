@@ -64,8 +64,8 @@ workspace 8 output eDP-1
 # Example configuration:
 
 exec swayidle -w \
-        timeout 240 'swayosd-client --brightness -5' \
-            resume 'swayosd-client --brightness +5' \
+        timeout 240 'light -O && light -S 5' \
+            resume 'light -I' \
         timeout 270 'swaylock -f' \
         timeout 300 'swaymsg "output * power off"' \
             resume 'swaymsg "output * power on"'  \
