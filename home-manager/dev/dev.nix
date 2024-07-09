@@ -19,6 +19,7 @@
       rustup
       # JS
       nodejs
+      typescript
       pnpm
       bun
       # Java

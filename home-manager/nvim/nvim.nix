@@ -89,7 +89,6 @@
       golangci-lint-langserver
       # Web
       vscode-langservers-extracted
-      typescript
       prettierd
       htmx-lsp
       rubyPackages.htmlbeautifier
