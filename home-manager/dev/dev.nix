@@ -20,6 +20,7 @@
       # JS
       nodejs
       typescript
+      nodePackages.ts-node
       pnpm
       bun
       # Java
