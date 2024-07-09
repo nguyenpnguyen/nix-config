@@ -27,11 +27,11 @@
     };
   in {
     nixosConfigurations = {
-      thinkpad-nixos = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
 
         modules = [
-          ./hosts/thinkpad-nixos
+          ./hosts/nixos
           catppuccin.nixosModules.catppuccin
           {
             environment.systemPackages = with pkgs; [
