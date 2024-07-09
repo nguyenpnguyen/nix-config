@@ -8,6 +8,8 @@
     bluetuith
     networkmanagerapplet
     gtk3
+    zip
+    unzip
     libreoffice-fresh
     floorp
     brave
