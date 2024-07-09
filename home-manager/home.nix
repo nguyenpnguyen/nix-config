@@ -17,6 +17,7 @@
     ./theme.nix
     ./misc.nix
     ./btop/btop.nix
+    ./wallpapers/wallpapers.nix
   ];
   home = {
     username = "nguyen";

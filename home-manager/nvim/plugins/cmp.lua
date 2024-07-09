@@ -70,7 +70,6 @@ cmp.setup({
 		{ name = "path", group_index = 2 },
 		{ name = "copilot", group_index = 2 },
 		{ name = "rg", keyword_length = 3 },
-		{ name = "path" },
 		formatting = {
 			format = lspkind.cmp_format({
 				mode = "symbol", -- show only symbol annotations
