@@ -27,6 +27,7 @@
     obsidian
     telegram-desktop
     protonvpn-cli_2
+    bitwarden
   ];
 
   i18n.inputMethod = {
