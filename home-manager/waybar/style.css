@@ -79,9 +79,9 @@
 }
 
 /* Bar*/
-window#waybar {
+/* window#waybar {
   background-color: transparent;
-}
+} */
 
 window>box {
   background-color: transparent;

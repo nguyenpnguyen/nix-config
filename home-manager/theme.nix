@@ -12,7 +12,7 @@
 
   gtk = {
     enable = true;
-    font.name = "DejaVuSansM Nerd Font Regular 11";
+    font.name = "NotoSansMono Nerd Font Regular 11";
 
     theme = {
       name = "Catppuccin-Macchiato-Standard-Flamingo-Dark";
