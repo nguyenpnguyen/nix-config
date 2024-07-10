@@ -26,7 +26,7 @@
 
     cursorTheme = {
       name = "mochaMauve";
-      size = 24;
+      size = 28;
       package = pkgs.catppuccin-cursors;
     };
 
