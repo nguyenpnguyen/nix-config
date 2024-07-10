@@ -28,6 +28,7 @@
     telegram-desktop
     protonvpn-cli_2
     bitwarden
+    ciscoPacketTracer8
   ];
 
   i18n.inputMethod = {
