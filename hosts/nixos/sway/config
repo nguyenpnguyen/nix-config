@@ -1,5 +1,5 @@
 # Exec on startup
-exec fcitx5 & wl-paste --watch cliphist store & swayosd-server & swaync & nm-applet
+exec fcitx5 & wl-paste --watch cliphist store & swayosd-server & swaync & nm-applet & floorp & wezterm
 
 # exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 ### Variables
