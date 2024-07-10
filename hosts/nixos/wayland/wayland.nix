@@ -25,6 +25,10 @@
     config.common.default = "*";
   };
 
+  programs.sway = {
+    enable = true;
+  };
+
   catppuccin = {
     enable = true;
     flavor = "macchiato";

@@ -81,8 +81,6 @@
     shell = pkgs.zsh;
   };
 
-  fonts.fontconfig.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

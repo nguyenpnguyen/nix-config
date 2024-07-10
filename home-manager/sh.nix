@@ -26,7 +26,7 @@ in {
         fi
 
         # Keybindings
-        bindkey -s '^o' 'lfcd\n'
+        bindkey -s ^O "lfcd\n"
         bindkey -s ^F "tmux-sessionizer\n"
 
         export PATH
