@@ -41,7 +41,7 @@ gaps inner 4
 
 ### Output configuration
 
- output * bg $HOME/Pictures/wallpapers/catppuccin-coffee.png fill
+ output * bg /home/nguyen/Pictures/wallpapers/catppuccin-coffee.png fill
 #
 # Example configuration:
 #
@@ -169,19 +169,6 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-    ### Mail and calendar
-    assign [instance="crx_faolnafnngnfdaknnbpnkhgohbobgegn"] workspace number 6
-    assign [instance="crx_eigpmdhekjlgjgcppnanaanbdmnlnagl"] workspace number 6
-    assign [instance="crx_fmgjjmmmlfnkbppncabfkddbjimcfncm"] workspace number 6
-    assign [instance="crx_kjbdgfilnfhdoflbpgamdcdgpehopbep"] workspace number 6
-    assign [instance="crx_jnpecgipniidlgicjocehkhajgdnjekh"] workspace number 6
-
-    for_window [instance="crx_faolnafnngnfdaknnbpnkhgohbobgegn"] layout tabbed
-    for_window [instance="crx_eigpmdhekjlgjgcppnanaanbdmnlnagl"] layout tabbed
-    for_window [instance="crx_fmgjjmmmlfnkbppncabfkddbjimcfncm"] layout tabbed
-    for_window [instance="crx_kjbdgfilnfhdoflbpgamdcdgpehopbep"] layout tabbed
-    for_window [instance="crx_jnpecgipniidlgicjocehkhajgdnjekh"] layout tabbed
-
     # Assign applications to specific workspaces
     assign [app_id="org.mozilla.firefox"] workspace number 1
     assign [app_id="floorp"] workspace number 1
@@ -189,7 +176,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     assign [app_id="org.wezfurlong.wezterm"] workspace number 2
     assign [app_id="foot"] workspace number 2
     assign [class="jetbrains-idea"] workspace number 2
-    assign [class="code-oss"] workspace number 2
+    assign [class="code"] workspace number 2
     assign [class="obsidian"] workspace number 3
     assign [class="StarUML"] workspace number 4
     assign [class="teams-for-linux"] workspace number 4
@@ -202,27 +189,20 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     for_window [app_id="thunar"] floating enable
     for_window [class="Bitwarden"] floating enable
 
-    ### # Browser Specific Rules
-
-    for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
-    for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
-    for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
-    for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable 
-
 
 # apply mark for Xwayland and wayland native browser windows
     for_window [class="Chromium-browser"] mark Browser
+    for_window [class="floorp"] mark Browser
     for_window [class="Brave-browser"] mark Browser
     for_window [class="firefox"]  mark Browser
     for_window [app_id="Chromium-browser"] mark Browser
     for_window [app_id="brave-browser"] mark Browser
+    for_window [app_id="floorp"] mark Browser
     for_window [app_id="firefox"] mark Browser
 
 # inhibit scrensaver for fullscreen browser windows
     for_window [con_mark="Browser"] { inhibit_idle fullscreen }
 
-# firefox wayland screensharing indicator
-    for_window [app_id="firefox" title="Firefox — Sharing Indicator"] { floating enable }
 #
 # Layout stuff:
 #
@@ -282,24 +262,15 @@ bindsym $mod+r mode "resize"
 bindgesture swipe:right workspace prev 
 bindgesture swipe:left workspace next 
 
-
-
-# Volume raise with custom value
-bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5
-# Volume lower with custom value
-bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5
-# Sink volume toggle mute
-bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
-# Source volume toggle mute
-bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness raise with custom value('+' sign needed)
-bindsym XF86MonBrightnessUp  exec swayosd-client --brightness +5
+bindsym XF86MonBrightnessUp  exec light -A +5
 # Brightness lower with custom value('-' sign needed)
-bindsym XF86MonBrightnessDown exec swayosd-client --brightness -5
-
-# Capslock (If you don't want to use the backend)
-bindsym --release Caps_Lock exec swayosd-client --caps-lock
+bindsym XF86MonBrightnessDown exec light -U -5
 
 # Media control
 bindsym --locked {

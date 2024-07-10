@@ -6,7 +6,7 @@
 
     # System packages
     ./keyd/keyd.nix
-    ./sway/sway.nix
+    ./wayland/wayland.nix
     ./greeter/greeter.nix
   ];
 }

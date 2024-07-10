@@ -12,9 +12,6 @@
       libnotify
       glib
     ];
-    etc = {
-      "sway/config".source = lib.mkForce ./config;
-    };
   };
 
   services = {
@@ -25,14 +22,7 @@
     enable = true;
     wlr.enable = true;
     extraPortals = lib.mkForce [pkgs.xdg-desktop-portal-gtk];
-  };
-
-  programs = {
-    sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-    };
-    light.enable = true;
+    config.common.default = "*";
   };
 
   catppuccin = {

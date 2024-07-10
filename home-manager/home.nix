@@ -18,6 +18,7 @@
     ./misc.nix
     ./btop/btop.nix
     ./wallpapers/wallpapers.nix
+    ./sway/sway.nix
   ];
   home = {
     username = "nguyen";
