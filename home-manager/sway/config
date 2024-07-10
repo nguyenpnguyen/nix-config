@@ -268,9 +268,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness raise with custom value('+' sign needed)
-bindsym XF86MonBrightnessUp  exec light -A +5
+bindsym XF86MonBrightnessUp  exec light -A 5
 # Brightness lower with custom value('-' sign needed)
-bindsym XF86MonBrightnessDown exec light -U -5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # Media control
 bindsym --locked {

@@ -25,8 +25,12 @@
     config.common.default = "*";
   };
 
-  programs.sway = {
-    enable = true;
+  programs = {
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
+    light.enable = true;
   };
 
   catppuccin = {
