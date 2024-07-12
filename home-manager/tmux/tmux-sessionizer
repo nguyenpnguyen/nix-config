@@ -3,7 +3,11 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/school ~/work ~/personal ~/exercism ~/.nixconf -mindepth 0 -maxdepth 1 -type d | fzf)
+selected=$(
+    (find ~/.nixconf -mindepth 0 -maxdepth 0 -type d -not -path '*/.git*'; \
+    find ~/work ~/personal -mindepth 1 -maxdepth 1 -type d -not -path '*/.git*'; \
+    find ~/school -mindepth 3 -maxdepth 3 -type d -not -path '*/.git*') | fzf
+)
 fi
 
 if [[ -z $selected ]]; then
