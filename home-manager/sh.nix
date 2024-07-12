@@ -32,6 +32,15 @@ in {
         export PATH
       '';
       initExtra = ''
+        if [ -d "/usr/bin" ] ; then
+          PATH="/usr/bin:$PATH"
+        fi
+
+        if [ -d "/usr/local/bin" ] ; then
+          PATH="/usr/local/bin:$PATH"
+        fi
+
+        export PATH
         source $HOME/.zprofile
       '';
       oh-my-zsh = {

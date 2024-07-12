@@ -13,7 +13,7 @@
     ./rofi/rofi.nix
     ./dev/dev.nix
     ./desktop/desktop.nix
-    ./lf/lf.nix
+    # ./lf/lf.nix
     ./theme.nix
     ./misc.nix
     ./btop/btop.nix

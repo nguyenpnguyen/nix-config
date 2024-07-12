@@ -29,6 +29,9 @@
     protonvpn-cli_2
     bitwarden
     ciscoPacketTracer8
+    wireguard-tools
+    openresolv
+    ranger
   ];
 
   i18n.inputMethod = {
